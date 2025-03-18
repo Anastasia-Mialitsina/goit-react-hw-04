@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

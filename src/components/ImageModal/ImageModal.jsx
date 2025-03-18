@@ -1,7 +1,8 @@
+// components/ImageModal/ImageModal.jsx
 import React from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 
+// Настройка модального окна
 const customStyles = {
   content: {
     top: "50%",
@@ -10,52 +11,51 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    backgroundColor: "#fff",
+    borderRadius: "8px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    padding: "0",
+    border: "none",
   },
 };
 
-// Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-Modal.setAppElement("#yourAppElement");
+Modal.setAppElement("#root"); // Чтобы избежать предупреждений в React
 
-function App() {
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
+const ImageModal = ({ isOpen, closeModal, imageUrl, imageAlt }) => {
   return (
-    <div>
-      <button onClick={openModal}>Open Modal</button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={closeModal}
+      style={customStyles}
+      contentLabel="Image Modal"
+      closeTimeoutMS={200}
+    >
+      <button
+        onClick={closeModal}
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          backgroundColor: "transparent",
+          border: "none",
+          fontSize: "20px",
+          cursor: "pointer",
+        }}
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
-      </Modal>
-    </div>
+        &times;
+      </button>
+      <img
+        src={imageUrl}
+        alt={imageAlt}
+        style={{
+          width: "100%",
+          maxWidth: "800px",
+          height: "auto",
+          borderRadius: "8px",
+        }}
+      />
+    </Modal>
   );
-}
+};
 
-ReactDOM.render(<App />, appElement);
+export default ImageModal;
