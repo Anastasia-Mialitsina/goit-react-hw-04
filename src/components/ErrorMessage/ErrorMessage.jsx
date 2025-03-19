@@ -1,5 +1,3 @@
-// components/ErrorMessage/ErrorMessage.jsx
-
 const ErrorMessage = () => {
   return (
     <p style={{ color: "red", textAlign: "center" }}>

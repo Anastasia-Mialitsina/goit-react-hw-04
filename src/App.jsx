@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from "react";
-import SearchBar from "./components/SearchBar/SearchBar"; // Импортируем компонент SearchBar
-import ImageModal from "./components/ImageModal/ImageModal"; // Импортируем компонент ImageModal
-import ImageGallery from "./components/ImageGallery/ImageGallery"; // Импортируем галерею изображений
-import Loader from "./components/Loader/Loader"; // Импортируем индикатор загрузки
-import ErrorMessage from "./components/ErrorMessage/ErrorMessage"; // Импортируем компонент ошибки
-import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn"; // Импортируем компонент Load More Button
-import fetchImages from "./api/fetchImages"; // Функция для получения изображений
+import SearchBar from "./components/SearchBar/SearchBar"; 
+import ImageModal from "./components/ImageModal/ImageModal"; 
+import ImageGallery from "./components/ImageGallery/ImageGallery"; 
+import Loader from "./components/Loader/Loader"; 
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage"; 
+import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn"; 
+import fetchImages from "./api/fetchImages"; 
 
 const App = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(false); // Состояние для открытия модального окна
-  const [selectedImage, setSelectedImage] = useState(null); // Состояние для выбранного изображения
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [selectedImage, setSelectedImage] = useState(null); 
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const App = () => {
       }
     };
 
-    getImages(); // Загружаем изображения при монтировании компонента
+    getImages(); 
   }, [page, searchQuery]);
 
   const openModal = (imageUrl, imageAlt) => {
@@ -51,10 +51,10 @@ const App = () => {
 
   const handleSearch = async (query) => {
     setSearchQuery(query);
-    setPage(1); // Сбрасываем страницу при новом поиске
-    setImages([]); // Очищаем старые изображения
+    setPage(1); 
+    setImages([]); 
     setLoading(true);
-    setError(null); // Сбрасываем ошибку перед новым поиском
+    setError(null); 
     try {
       const data = await fetchImages(query, 1);
       console.log(data.results);

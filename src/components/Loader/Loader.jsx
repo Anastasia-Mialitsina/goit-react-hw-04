@@ -1,5 +1,5 @@
 import RingLoader from "react-spinners/RingLoader";
-import style from "./Loader.module.css"; // Подключаем стили
+import style from "./Loader.module.css"; 
 
 const Loader = ({ loading }) => {
   return (

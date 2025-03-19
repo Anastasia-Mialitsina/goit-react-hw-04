@@ -1,13 +1,13 @@
 import Modal from "react-modal";
-import styles from "./ImageModal.module.css"; // Подключаем стили
+import styles from "./ImageModal.module.css"; 
 
-Modal.setAppElement("#root"); // Указываем корневой элемент
+Modal.setAppElement("#root"); 
 
 const ImageModal = ({ isOpen, closeModal, imageUrl, imageAlt }) => {
   return (
     <Modal
       isOpen={isOpen}
-      onRequestClose={closeModal} // Закрытие при клике вне окна или на ESC
+      onRequestClose={closeModal} 
       className={styles.modal}
       overlayClassName={styles.overlay}
     >
