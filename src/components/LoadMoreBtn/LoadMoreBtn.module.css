@@ -1,0 +1,27 @@
+.LoadMoreBtn {
+  position: relative;
+  padding: 15px 30px;
+  font-size: 10px;
+  background-color: #222;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #717070;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 0 15px #69b7df;
+  animation: neonGlow 3s linear infinite;
+}
+.LoadMoreBtn:hover {
+  transform: scale(1.05);
+}
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 10px #71bfe5, 0 0 20px #00ffaa, 0 0 30px #ff66cc, 0 0 40px #aa66ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #aa66ff, 0 0 30px #61b1d8, 0 0 40px #00ffaa, 0 0 50px #ff66cc;
+  }
+  100% {
+    box-shadow: 0 0 10px #63bbe7, 0 0 20px #00ffaa, 0 0 30px #ff66cc, 0 0 40px #aa66ff;
+  }
+}

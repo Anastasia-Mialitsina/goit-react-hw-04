@@ -20,7 +20,11 @@ const App = () => {
     const getImages = async () => {
       if (!searchQuery) return;
       setLoading(true);
+      console.log("Загрузка началась:", new Date().toISOString());
+      
       try {
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
         const data = await fetchImages(page);
         console.log("Загруженные данные:", data);
         setImages((prevImages) => [...prevImages, ...data.results]);
@@ -28,6 +32,7 @@ const App = () => {
         setError("Ошибка при загрузке изображений");
       } finally {
         setLoading(false);
+         console.log("Загрузка завершена:", new Date().toISOString());
       }
     };
 
@@ -55,7 +60,7 @@ const App = () => {
       console.log(data.results);
       setImages(data.results);
     } catch (error) {
-       console.error("Ошибка при поиске изображений", error);
+      console.error("Ошибка при поиске изображений", error);
       setError("Произошла ошибка при поиске изображений");
     } finally {
       setLoading(false);
@@ -63,15 +68,14 @@ const App = () => {
   };
 
   const loadMoreImages = () => {
-    setPage((prevPage) => prevPage + 1); // Переходим к следующей странице
+    setPage((prevPage) => prevPage + 1); 
   };
 
   return (
     <div>
       <SearchBar onSubmit={handleSearch} />
-      {loading && <Loader />} {/* Показать индикатор загрузки */}
-      {error && <ErrorMessage message={error} />}{" "}
-      {/* Показать сообщение об ошибке */}
+      {loading && <Loader />} 
+      {error && <ErrorMessage message={error} />}
       {!loading && !error && images.length > 0 && (
         <ImageGallery images={images} onImageClick={openModal} />
       )}

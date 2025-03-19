@@ -1,10 +1,10 @@
-import { ClipLoader } from "react-spinners";
-import style from "./Loader.module.css"; // Создай стили, если нужно
+import RingLoader from "react-spinners/RingLoader";
+import style from "./Loader.module.css"; // Подключаем стили
 
-const Loader = () => {
+const Loader = ({ loading }) => {
   return (
     <div className={style.loader}>
-      <ClipLoader size={50} color="#36d7b7" />
+      {loading && <RingLoader size={80} color="#36d7b7" />}
     </div>
   );
 };

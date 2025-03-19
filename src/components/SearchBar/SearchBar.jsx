@@ -30,10 +30,10 @@ const SearchBar = ({ onSubmit }) => {
           autoFocus
           placeholder="Search images and photos"
           value={query}
-          onChange={handleChange} // ✅ Обработчик изменения
+          onChange={handleChange}
         />
         <button className={style.button} type="submit">
-          Search
+          Сlick me
         </button>
       </form>
       <Toaster />

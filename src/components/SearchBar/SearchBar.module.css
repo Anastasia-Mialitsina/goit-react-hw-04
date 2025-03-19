@@ -1,0 +1,94 @@
+.header {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+input,
+button {
+  font-family: Arial, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+.input {
+  padding-left: 340px ;
+  width: 500px;
+  height: 30px;
+  margin-right: 40px;
+  background-color: #111;
+  position: relative;
+  background-color: #222;
+  color: white;
+  border: #92f0fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 0 15px #00aaff;
+  animation: neonGlow 3s linear infinite;
+}
+.input:hover {
+  transform: scale(1.05);
+}
+.input:focus {
+  outline: none; 
+}
+
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 10px #71bfe5, 0 0 20px #00ffaa, 0 0 30px #ff66cc, 0 0 40px #aa66ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #aa66ff, 0 0 30px #61b1d8, 0 0 40px #00ffaa, 0 0 50px #ff66cc;
+  }
+  100% {
+    box-shadow: 0 0 10px #63bbe7, 0 0 20px #00ffaa, 0 0 30px #ff66cc, 0 0 40px #aa66ff;
+  }
+}
+.button {
+  position: relative;
+  padding: 15px 30px;
+  font-size: 10px;
+  font-weight: bold;
+  color: rgb(129, 128, 128);
+  background-color: #222;
+  border: #92f0fa;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 0 15px #00aaff;
+  animation: neonGlow 3s linear infinite;
+}
+.button:hover {
+ transform: scale(1.05);
+}
+
+@keyframes neonGlow {
+  0% {
+    box-shadow: 0 0 10px #71bfe5, 0 0 20px #00ffaa, 0 0 30px #ff66cc, 0 0 40px #aa66ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #aa66ff, 0 0 30px #61b1d8, 0 0 40px #00ffaa, 0 0 50px #ff66cc;
+  }
+  100% {
+    box-shadow: 0 0 10px #63bbe7, 0 0 20px #00ffaa, 0 0 30px #ff66cc, 0 0 40px #aa66ff;
+  }
+}
+
+/*@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+  }
+  25% {
+    box-shadow: 0 0 15px #f17cc6, 0 0 25px #f17cc6, 0 0 35px #f17cc6, 0 0 45px #f17cc6;
+  }
+  50% {
+    box-shadow: 0 0 10px #7cd0e3, 0 0 20px #7cd0e3, 0 0 30px #7cd0e3, 0 0 40px #7cd0e3;
+  }
+  75% {
+    box-shadow: 0 0 15px #caee7d, 0 0 25px #caee7d, 0 0 35px #caee7d, 0 0 45px #caee7d;
+  }
+  100% {
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+  }
+}*/
