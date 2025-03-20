@@ -23,8 +23,6 @@ const App = () => {
       console.log("Загрузка началась:", new Date().toISOString());
       
       try {
-        await new Promise((resolve) => setTimeout(resolve, 3000));
-
         const data = await fetchImages(page);
         console.log("Загруженные данные:", data);
         setImages((prevImages) => [...prevImages, ...data.results]);
